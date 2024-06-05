@@ -17,7 +17,7 @@ class StudentResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'classroom' => $this->classroom->name
+            'classroom' => $this->classroom ? $this->classroom->name : "Not belong to any classroom"
         ];
     }
 }

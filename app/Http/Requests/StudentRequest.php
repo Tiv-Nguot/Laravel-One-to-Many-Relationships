@@ -4,16 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StudentRequest extends FormRequest
+class StudentRequest extends DefaultRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -21,8 +13,9 @@ class StudentRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        $rules =[
+            'name' => 'required|string|max:255'
         ];
+        return $rules;
     }
 }

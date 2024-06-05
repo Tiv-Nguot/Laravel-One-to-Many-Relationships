@@ -22,13 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/classroom/list',[ClassroomController::class,'index']);
-Route::get('/classroom/show',[ClassroomController::class,'show']);
+Route::get('/classroom/show/{id}',[ClassroomController::class,'show']);
 Route::post('/classroom/create',[ClassroomController::class,'store']);
 Route::put('/classroom/update/{id}',[ClassroomController::class,'update']);
-Route::delete('/classroom/update/{id}',[ClassroomController::class,'destroy']);
+Route::delete('/classroom/delete/{id}',[ClassroomController::class,'destroy']);
 
 Route::get('/student/list',[StudentController::class,'index']);
-Route::get('/student/show',[StudentController::class,'show']);
+Route::get('/student/show/{id}',[StudentController::class,'show']);
 Route::post('/student/create',[StudentController::class,'store']);
 Route::put('/student/update/{id}',[StudentController::class,'update']);
-Route::delete('/student/update/{id}',[StudentController::class,'destroy']);
+Route::delete('/student/delete/{id}',[StudentController::class,'destroy']);
